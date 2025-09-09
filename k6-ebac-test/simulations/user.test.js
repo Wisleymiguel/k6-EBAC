@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { group, sleep } from 'k6';
-import Login from '../request/login.request';
+import Login from "../request/login.reqeust";
 import data from "../data/usuarios.json"
 
 export default function () {
