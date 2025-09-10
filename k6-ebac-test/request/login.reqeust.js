@@ -1,5 +1,6 @@
 import http from "k6/http"
 import Utils from "../utils/utils"
+import { check } from "k6"
 
 export default class Login {
     #token
@@ -17,7 +18,7 @@ export default class Login {
         }
     })
     this.#token = response.json('accessToken')
-    check(request, {
+    check(response, {
         "status deve ser 201": (r) => r.status === 201
     });
 }
